@@ -502,7 +502,7 @@ function drawDebugPanel() {
   // Background panel
   fill(0, 180);
   noStroke();
-  rect(10, 80, 230, 180);
+  rect(10, 80, 230, 210);
 
   // Panel text
   fill(255);
@@ -518,6 +518,7 @@ function drawDebugPanel() {
   text("3 = Jump to Level 3", 20, 190);
   text("S = Start Screen", 20, 210);
   text("W = Win Screen", 20, 230);
+  text("G = Game Over Screen", 20, 250);
 
   pop();
 }
@@ -590,6 +591,11 @@ function keyPressed() {
   // Jump directly to the win screen
   if (key === "w" || key === "W") {
     gameState = STATE_WIN;
+  }
+
+  // Jump directly to the game over screen
+  if (key === "g" || key === "G") {
+  gameState = STATE_OVER;
   }
 }
 
